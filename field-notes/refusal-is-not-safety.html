@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0"
+
+>
+
+<meta
+name="description"
+content="A field note by Jacqueline Jiang on why refusal behavior alone is an incomplete measure of AI safety."
+
+>
+
+  <title>A Refusal Is Not Automatically a Safe Response | Jacqueline Jiang</title>
+
+  <style>
+    :root {
+      --background: #080c0e;
+      --panel: #101719;
+      --border: #293537;
+
+      --text-primary: #f1f5f4;
+      --text-secondary: #a5b0ae;
+      --text-muted: #6f7d7a;
+
+      --teal: #25b7a4;
+      --teal-hover: #35c9b5;
+
+      --success: #91c95f;
+      --warning: #d5a74d;
+      --risk: #d35d5d;
+
+      --content-width: 820px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--background);
+      color: var(--text-primary);
+      font-family:
+        Inter,
+        ui-sans-serif,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+    }
+
+    a {
+      color: var(--teal);
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: var(--teal-hover);
+    }
+
+    .mono {
+      font-family:
+        "SFMono-Regular",
+        Consolas,
+        "Liberation Mono",
+        monospace;
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      min-height: 62px;
+      padding: 0 34px;
+      border-bottom: 1px solid var(--border);
+      background: var(--background);
+    }
+
+    .topbar-left,
+    .topbar-right {
+      color: var(--text-muted);
+      font-size: 0.76rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .topbar-left span {
+      color: var(--teal);
+    }
+
+    .page {
+      width: min(var(--content-width), calc(100% - 40px));
+      margin: 0 auto;
+      padding: 72px 0 100px;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 50px;
+      color: var(--text-muted);
+      font-size: 0.76rem;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+    }
+
+    .back-link:hover {
+      color: var(--teal);
+    }
+
+    .article-header {
+      padding-bottom: 44px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .article-label {
+      margin: 0 0 20px;
+      color: var(--teal);
+      font-size: 0.76rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      max-width: 760px;
+      margin: 0;
+      font-size: clamp(2.8rem, 8vw, 5.4rem);
+      line-height: 0.98;
+      letter-spacing: -0.055em;
+    }
+
+    .dek {
+      max-width: 720px;
+      margin: 28px 0 0;
+      color: var(--text-secondary);
+      font-size: 1.15rem;
+      line-height: 1.75;
+    }
+
+    .metadata {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      margin-top: 28px;
+      color: var(--text-muted);
+      font-size: 0.72rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    article {
+      padding-top: 48px;
+    }
+
+    article p {
+      margin: 0 0 26px;
+      color: var(--text-secondary);
+      font-size: 1.03rem;
+      line-height: 1.85;
+    }
+
+    article h2 {
+      margin: 56px 0 20px;
+      font-size: 1.55rem;
+      letter-spacing: -0.025em;
+    }
+
+    article ul {
+      margin: 0 0 30px;
+      padding-left: 24px;
+      color: var(--text-secondary);
+    }
+
+    article li {
+      margin-bottom: 12px;
+      line-height: 1.7;
+    }
+
+    .callout {
+      margin: 40px 0;
+      padding: 24px;
+      border-left: 3px solid var(--teal);
+      background: var(--panel);
+    }
+
+    .callout p {
+      margin: 0;
+      color: var(--text-primary);
+      font-size: 1.05rem;
+      line-height: 1.75;
+    }
+
+    .framework {
+      margin: 42px 0;
+      border: 1px solid var(--border);
+      background: var(--panel);
+    }
+
+    .framework-row {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 24px;
+      padding: 20px 22px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .framework-row:last-child {
+      border-bottom: 0;
+    }
+
+    .framework-label {
+      color: var(--teal);
+      font-size: 0.74rem;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+    }
+
+    .framework-text {
+      color: var(--text-secondary);
+      line-height: 1.65;
+    }
+
+    .article-footer {
+      margin-top: 64px;
+      padding-top: 28px;
+      border-top: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 0.76rem;
+      line-height: 1.7;
+    }
+
+    @media (max-width: 640px) {
+      .topbar {
+        padding: 0 20px;
+      }
+
+      .topbar-right {
+        display: none;
+      }
+
+      .page {
+        padding-top: 48px;
+      }
+
+      .framework-row {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+  <header class="topbar mono">
+    <div class="topbar-left">
+      <span>&gt;_</span> jackiejay077.github.io
+    </div>
+
+```
+<div class="topbar-right">
+  Field Note 001
+</div>
+```
+
+  </header>
+
+  <main class="page">
+    <a class="back-link mono" href="../index.html#field-notes">
+      ← Return to field notes
+    </a>
+
+```
+<header class="article-header">
+  <p class="article-label mono">Field Note 001 · Model Behavior</p>
+
+  <h1>A Refusal Is Not Automatically a Safe Response</h1>
+
+  <p class="dek">
+    Refusal is easy to count. Good judgment is harder to measure.
+    Treating the two as interchangeable creates evaluations that reward
+    visible caution while missing whether the model actually understood
+    the request.
+  </p>
+
+  <div class="metadata mono">
+    <span>Status: Published</span>
+    <span>Version: 1.0</span>
+    <span>Author: Jacqueline Jiang</span>
+  </div>
+</header>
+
+<article>
+  <p>
+    Safety evaluation often begins with an apparently simple question:
+    did the model comply or refuse?
+  </p>
+
+  <p>
+    That question is useful, but it is incomplete. A refusal can be
+    appropriate, disproportionate, irrelevant, or built on a complete
+    misunderstanding of the user’s intent. The visible behavior may look
+    safe while the reasoning underneath it is weak.
+  </p>
+
+  <p>
+    A model that refuses whenever it detects certain words is not
+    necessarily demonstrating robust safety judgment. It may simply be
+    reacting to surface-level signals. This can produce a system that
+    appears cautious in evaluation while remaining unreliable in more
+    ambiguous or adversarial contexts.
+  </p>
+
+  <div class="callout">
+    <p>
+      A safe-looking response is not the same thing as a well-reasoned
+      response.
+    </p>
+  </div>
+
+  <h2>The problem with refusal as a primary metric</h2>
+
+  <p>
+    Refusal is attractive as an evaluation signal because it is visible,
+    easy to classify, and relatively simple to compare across test cases.
+    It can be reduced to a binary label and placed neatly into a
+    spreadsheet.
+  </p>
+
+  <p>
+    Unfortunately, model behavior rarely remains neat for long.
+  </p>
+
+  <p>
+    A binary refusal metric does not tell us:
+  </p>
+
+  <ul>
+    <li>whether the model correctly understood the user’s intent;</li>
+    <li>whether the refusal addressed the actual risk;</li>
+    <li>whether benign content was incorrectly treated as harmful;</li>
+    <li>whether harmful content was merely redirected into a different form;</li>
+    <li>whether the explanation was accurate, proportionate, or useful;</li>
+    <li>whether the same reasoning would generalize to a less obvious case.</li>
+  </ul>
+
+  <p>
+    When these distinctions are ignored, models can receive credit for
+    producing the shape of safety without demonstrating the substance of
+    it.
+  </p>
+
+  <h2>Over-refusal is still a model failure</h2>
+
+  <p>
+    Over-refusal is sometimes treated as the safer error. In narrow terms,
+    that may be true: refusing a benign request is often less immediately
+    dangerous than complying with a harmful one.
+  </p>
+
+  <p>
+    But repeatedly dismissing over-refusal as harmless creates its own
+    blind spot. A model that cannot reliably distinguish benign,
+    ambiguous, and harmful intent is not making careful decisions. It is
+    substituting caution for understanding.
+  </p>
+
+  <p>
+    This matters because a system that relies heavily on lexical triggers
+    may fail in both directions. It may refuse benign requests containing
+    suspicious language while complying with harmful requests expressed
+    indirectly, euphemistically, or across multiple modalities.
+  </p>
+
+  <p>
+    The model has not become safer. It has become easier to predict.
+  </p>
+
+  <h2>The adjacent-question problem</h2>
+
+  <p>
+    Not every safety failure is a direct refusal or direct compliance.
+    Models often answer a nearby question instead.
+  </p>
+
+  <p>
+    The response may acknowledge the topic, produce general guidance, or
+    redirect toward a safer framing without addressing the actual request.
+    This can make the interaction appear responsive while avoiding the
+    evaluation target entirely.
+  </p>
+
+  <p>
+    In some cases, that is a reasonable safety strategy. In others, it is
+    policy-shaped evasion: the model produces language associated with
+    safety while failing to demonstrate that it understood the task.
+  </p>
+
+  <p>
+    Evaluators should distinguish between a useful redirect and an
+    irrelevant pivot. Otherwise, the model may receive credit simply for
+    sounding responsible.
+  </p>
+
+  <h2>A more useful evaluation frame</h2>
+
+  <p>
+    Refusal should be evaluated as one part of a larger behavioral
+    sequence rather than as the final verdict.
+  </p>
+
+  <div class="framework">
+    <div class="framework-row">
+      <div class="framework-label mono">Intent</div>
+
+      <div class="framework-text">
+        Did the model correctly identify what the user was trying to do?
+      </div>
+    </div>
+
+    <div class="framework-row">
+      <div class="framework-label mono">Context</div>
+
+      <div class="framework-text">
+        Did the model use the full conversation, modality, and available
+        evidence rather than isolated trigger words?
+      </div>
+    </div>
+
+    <div class="framework-row">
+      <div class="framework-label mono">Proportionality</div>
+
+      <div class="framework-text">
+        Was the response appropriately calibrated to the level and type
+        of risk?
+      </div>
+    </div>
+
+    <div class="framework-row">
+      <div class="framework-label mono">Relevance</div>
+
+      <div class="framework-text">
+        Did the model respond to the actual request, or did it answer a
+        safer neighboring question?
+      </div>
+    </div>
+
+    <div class="framework-row">
+      <div class="framework-label mono">Outcome</div>
+
+      <div class="framework-text">
+        Did the response reduce risk without introducing new errors,
+        unsupported assumptions, or misleading guidance?
+      </div>
+    </div>
+  </div>
+
+  <p>
+    This framing makes room for a wider set of outcomes:
+  </p>
+
+  <ul>
+    <li>appropriate compliance;</li>
+    <li>appropriate refusal;</li>
+    <li>over-refusal;</li>
+    <li>unsafe compliance;</li>
+    <li>partial compliance;</li>
+    <li>irrelevant safety pivot;</li>
+    <li>grounding failure;</li>
+    <li>intent misclassification.</li>
+  </ul>
+
+  <p>
+    These categories are less convenient than a binary score. They are
+    also closer to how model failures actually behave.
+  </p>
+
+  <h2>What good safety judgment looks like</h2>
+
+  <p>
+    A strong safety response does more than stop. It demonstrates that the
+    model understood why caution was necessary, responded proportionately,
+    and preserved as much legitimate usefulness as possible.
+  </p>
+
+  <p>
+    In benign cases, that may mean complying without becoming distracted
+    by isolated risk markers. In ambiguous cases, it may mean asking for
+    clarification. In clearly harmful cases, it may mean refusing the
+    dangerous portion while still offering safe and relevant support.
+  </p>
+
+  <p>
+    The objective is not maximum refusal. The objective is reliable
+    judgment.
+  </p>
+
+  <div class="callout">
+    <p>
+      Refusal is an output category. Safety is a reasoning quality.
+    </p>
+  </div>
+
+  <h2>Final note</h2>
+
+  <p>
+    Evaluations that reward refusal without examining understanding risk
+    training models to perform caution rather than practice it.
+  </p>
+
+  <p>
+    That may look convincing in a benchmark. It becomes less convincing
+    the moment the user stops speaking in benchmark-shaped language.
+  </p>
+</article>
+
+<footer class="article-footer mono">
+  <p>
+    This field note is part of an evolving public framework for analyzing
+    adversarial model behavior, multimodal risk, and trust and safety
+    evaluation quality.
+  </p>
+</footer>
+```
+
+  </main>
+</body>
+</html>
