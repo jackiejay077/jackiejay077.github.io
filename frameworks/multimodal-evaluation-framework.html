@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0"
+
+>
+
+<meta
+name="description"
+content="A practical framework for evaluating multimodal AI systems across image understanding, text-image interaction, intent, consistency, and safety."
+
+>
+
+  <title>
+    Multimodal Evaluation Framework | Jacqueline Jiang
+  </title>
+
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/content.css">
+</head>
+
+<body>
+  <header class="topbar mono">
+    <div class="topbar-left">
+      <span>&gt;_</span> jackiejay077.github.io
+    </div>
+
+```
+<div class="topbar-right">
+  Framework 003
+</div>
+```
+
+  </header>
+
+  <main class="page">
+    <a class="back-link mono" href="../index.html#frameworks">
+      ← Return to frameworks
+    </a>
+
+```
+<header class="case-header">
+  <p class="case-label mono">
+    Framework 003 · Multimodal Evaluation
+  </p>
+
+  <h1>Multimodal Evaluation Framework</h1>
+
+  <p class="dek">
+    A structured method for evaluating whether multimodal AI systems
+    recognize, integrate, and reason across text, images, and
+    multi-reference inputs.
+  </p>
+
+  <div class="metadata mono">
+    <span class="published">Status: Published</span>
+    <span>Version: 1.0</span>
+    <span>Author: Jacqueline Jiang</span>
+  </div>
+
+  <div class="summary-grid">
+    <div class="summary-card">
+      <p class="summary-label mono">Framework Type</p>
+
+      <p class="summary-value">
+        Multimodal evaluation methodology
+      </p>
+    </div>
+
+    <div class="summary-card">
+      <p class="summary-label mono">Primary Use</p>
+
+      <p class="summary-value">
+        Safety testing, QA, annotation, and failure analysis
+      </p>
+    </div>
+
+    <div class="summary-card">
+      <p class="summary-label mono">Core Principle</p>
+
+      <p class="summary-value">
+        Evaluate the combined meaning, not isolated inputs
+      </p>
+    </div>
+  </div>
+</header>
+
+<article>
+  <h2>Purpose</h2>
+
+  <p>
+    Multimodal evaluation requires more than checking whether a model can
+    identify objects in an image or summarize visible content. A system
+    may accurately recognize individual inputs while still failing to
+    understand the meaning that emerges from their combination.
+  </p>
+
+  <p>
+    This framework separates recognition, integration, intent, reasoning,
+    and safety behavior so evaluators can identify where the failure
+    actually occurs.
+  </p>
+
+  <div class="thesis">
+    <p>
+      Image recognition is not image understanding, and input recognition
+      is not cross-modal reasoning.
+    </p>
+  </div>
+
+  <h2>Evaluation layers</h2>
+
+  <div class="stages">
+    <section class="stage">
+      <div class="stage-number mono">Layer 01</div>
+
+      <div class="stage-content">
+        <h3>Input recognition</h3>
+
+        <p>
+          Can the model accurately identify the visible objects, people,
+          text, relationships, and environmental details in each image?
+        </p>
+      </div>
+    </section>
+
+    <section class="stage">
+      <div class="stage-number mono">Layer 02</div>
+
+      <div class="stage-content">
+        <h3>Cross-modal integration</h3>
+
+        <p>
+          Does the model combine the visual evidence with the user’s text
+          rather than processing each input independently?
+        </p>
+      </div>
+    </section>
+
+    <section class="stage">
+      <div class="stage-number mono">Layer 03</div>
+
+      <div class="stage-content">
+        <h3>Relational understanding</h3>
+
+        <p>
+          Can the model interpret relationships between objects, people,
+          scenes, reference images, and requested transformations?
+        </p>
+      </div>
+    </section>
+
+    <section class="stage">
+      <div class="stage-number mono">Layer 04</div>
+
+      <div class="stage-content">
+        <h3>Intent interpretation</h3>
+
+        <p>
+          Does the model understand why the user supplied the images and
+          what outcome the user is attempting to produce?
+        </p>
+      </div>
+    </section>
+
+    <section class="stage">
+      <div class="stage-number mono">Layer 05</div>
+
+      <div class="stage-content">
+        <h3>Safety judgment</h3>
+
+        <p>
+          Does the response account for risk that emerges only after the
+          visual and textual inputs are considered together?
+        </p>
+      </div>
+    </section>
+
+    <section class="stage">
+      <div class="stage-number mono">Layer 06</div>
+
+      <div class="stage-content">
+        <h3>Output fidelity</h3>
+
+        <p>
+          Does the final response or generated image preserve the intended
+          identity, attributes, relationships, constraints, and safety
+          boundaries?
+        </p>
+      </div>
+    </section>
+  </div>
+
+  <h2>Core evaluation dimensions</h2>
+
+  <div class="taxonomy">
+    <div class="taxonomy-row">
+      <div class="taxonomy-label mono">
+        Visual Grounding
+      </div>
+
+      <div class="taxonomy-text">
+        Accuracy of object recognition, scene interpretation, spatial
+        relationships, visible text, and relevant visual evidence.
+      </div>
+    </div>
+
+    <div class="taxonomy-row">
+      <div class="taxonomy-label mono">
+        Text-Image Alignment
+      </div>
+
+      <div class="taxonomy-text">
+        Whether the response reflects the actual relationship between the
+        prompt and the image rather than relying on one modality alone.
+      </div>
+    </div>
+
+    <div class="taxonomy-row">
+      <div class="taxonomy-label mono">
+        Cross-Image Consistency
+      </div>
+
+      <div class="taxonomy-text">
+        Whether identities, attributes, visual details, and relationships
+        remain consistent across multiple reference images.
+      </div>
+    </div>
+
+    <div class="taxonomy-row">
+      <div class="taxonomy-label mono">
+        Composite Meaning
+      </div>
+
+      <div class="taxonomy-text">
+        Whether the model identifies meaning or risk that emerges from the
+        combination of otherwise benign components.
+      </div>
+    </div>
+
+    <div class="taxonomy-row">
+      <div class="taxonomy-label mono">
+        User Intent
+      </div>
+
+      <div class="taxonomy-text">
+        Whether the model correctly understands the purpose of the request,
+        including transformation, comparison, editing, analysis, or
+        generation.
+      </div>
+    </div>
+
+    <div class="taxonomy-row">
+      <div class="taxonomy-label mono">
+        Response Proportionality
+      </div>
+
+      <div class="taxonomy-text">
+        Whether the model complies, clarifies, redirects, or refuses in a
+        way that is proportionate to the actual risk.
+      </div>
+    </div>
+  </div>
+
+  <h2>Common multimodal failure modes</h2>
+
+  <div class="finding-grid">
+    <section class="finding">
+      <p class="finding-index mono">Failure 01</p>
+
+      <h3>Multimodal Fragmentation</h3>
+
+      <p>
+        The model processes text and image inputs separately and misses
+        the meaning created by their combination.
+      </p>
+    </section>
+
+    <section class="finding">
+      <p class="finding-index mono">Failure 02</p>
+
+      <h3>Visual Hallucination</h3>
+
+      <p>
+        The model invents objects, actions, text, identities, or scene
+        details that are not present in the image.
+      </p>
+    </section>
+
+    <section class="finding">
+      <p class="finding-index mono">Failure 03</p>
+
+      <h3>Context Suppression</h3>
+
+      <p>
+        The model recognizes relevant visual evidence but fails to use it
+        when interpreting the user’s request.
+      </p>
+    </section>
+
+    <section class="finding">
+      <p class="finding-index mono">Failure 04</p>
+
+      <h3>Reference Drift</h3>
+
+      <p>
+        Identity, appearance, attributes, or relationships shift across
+        multiple reference images or generated outputs.
+      </p>
+    </section>
+
+    <section class="finding">
+      <p class="finding-index mono">Failure 05</p>
+
+      <h3>Attribute Leakage</h3>
+
+      <p>
+        Features from one reference image are incorrectly transferred onto
+        another person, object, or scene.
+      </p>
+    </section>
+
+    <section class="finding">
+      <p class="finding-index mono">Failure 06</p>
+
+      <h3>Composite-Risk Blindness</h3>
+
+      <p>
+        Individually benign inputs combine into a risky request, but the
+        model evaluates each component in isolation.
+      </p>
+    </section>
+
+    <section class="finding">
+      <p class="finding-index mono">Failure 07</p>
+
+      <h3>Prompt Dominance</h3>
+
+      <p>
+        The model follows the user’s text while disregarding contradictory
+        or limiting visual evidence.
+      </p>
+    </section>
+
+    <section class="finding">
+      <p class="finding-index mono">Failure 08</p>
+
+      <h3>Image Dominance</h3>
+
+      <p>
+        The model overweights visual content and ignores the actual task or
+        constraints stated in the prompt.
+      </p>
+    </section>
+
+    <section class="finding">
+      <p class="finding-index mono">Failure 09</p>
+
+      <h3>Transformation Misread</h3>
+
+      <p>
+        The model misunderstands which subject, attribute, background, or
+        style the user wants preserved, changed, or removed.
+      </p>
+    </section>
+
+    <section class="finding">
+      <p class="finding-index mono">Failure 10</p>
+
+      <h3>Safety-Signal Dilution</h3>
+
+      <p>
+        Risk is obscured because relevant evidence is distributed across
+        multiple inputs rather than concentrated in one prompt or image.
+      </p>
+    </section>
+  </div>
+
+  <h2>Evaluation workflow</h2>
+
+  <div class="table-wrapper">
+    <table>
+      <thead>
+        <tr>
+          <th>Step</th>
+          <th>Evaluator question</th>
+          <th>Evidence to capture</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>Inventory</td>
+
+          <td>
+            What inputs are present, and which details are materially
+            relevant?
+          </td>
+
+          <td>
+            Objects, people, text, setting, relationships, and references
+          </td>
+        </tr>
+
+        <tr>
+          <td>Interpret</td>
+
+          <td>
+            What does the user appear to be asking the model to do?
+          </td>
+
+          <td>
+            Explicit goal, transformation request, comparison, or analysis
+          </td>
+        </tr>
+
+        <tr>
+          <td>Integrate</td>
+
+          <td>
+            What meaning emerges only when all modalities are considered?
+          </td>
+
+          <td>
+            Cross-modal relationships, contradictions, and composite risk
+          </td>
+        </tr>
+
+        <tr>
+          <td>Predict</td>
+
+          <td>
+            What would a strong response or output preserve, change, or
+            refuse?
+          </td>
+
+          <td>
+            Expected behavior and critical constraints
+          </td>
+        </tr>
+
+        <tr>
+          <td>Compare</td>
+
+          <td>
+            How does the observed model behavior differ from the expected
+            behavior?
+          </td>
+
+          <td>
+            Missing details, distortions, unsafe synthesis, or over-refusal
+          </td>
+        </tr>
+
+        <tr>
+          <td>Classify</td>
+
+          <td>
+            Which failure mechanism best explains the gap?
+          </td>
+
+          <td>
+            Failure label, confidence, severity, and supporting evidence
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Multi-reference evaluation</h2>
+
+  <p>
+    Multi-reference tasks introduce additional complexity because the
+    model must determine which properties belong to which source and how
+    those properties should interact in the final output.
+  </p>
+
+  <p>
+    Evaluators should explicitly document:
+  </p>
+
+  <ul>
+    <li>which reference controls identity;</li>
+    <li>which reference controls pose, style, setting, or clothing;</li>
+    <li>which attributes must remain unchanged;</li>
+    <li>which attributes may be transferred;</li>
+    <li>whether the references conflict;</li>
+    <li>whether the model preserves source boundaries.</li>
+  </ul>
+
+  <div class="risk-callout">
+    <p>
+      A visually plausible output can still be a failure if it transfers
+      the wrong person, attribute, relationship, or safety-relevant detail.
+    </p>
+  </div>
+
+  <h2>Intent and safety</h2>
+
+  <p>
+    Multimodal safety decisions should not be based solely on whether an
+    image contains a sensitive object or whether a prompt contains a
+    sensitive term. The evaluator must determine how the inputs function
+    together.
+  </p>
+
+  <p>
+    The same image may support:
+  </p>
+
+  <ul>
+    <li>a benign organizational request;</li>
+    <li>a fictional or analytical request;</li>
+    <li>an ambiguous transformation request;</li>
+    <li>an adversarial system test;</li>
+    <li>a harmful request seeking actionable assistance.</li>
+  </ul>
+
+  <p>
+    The relevant unit of analysis is therefore not the image or prompt
+    independently. It is the complete multimodal request.
+  </p>
+
+  <div class="thesis">
+    <p>
+      The objects are rarely the entire problem. The arrangement, the
+      relationship, and the question asked about them usually are.
+    </p>
+  </div>
+
+  <h2>Suggested annotation fields</h2>
+
+  <div class="taxonomy">
+    <div class="taxonomy-row">
+      <div class="taxonomy-label mono">
+        Input Summary
+      </div>
+
+      <div class="taxonomy-text">
+        Concise description of each image, prompt, and relevant reference.
+      </div>
+    </div>
+
+    <div class="taxonomy-row">
+      <div class="taxonomy-label mono">
+        User Intent
+      </div>
+
+      <div class="taxonomy-text">
+        Benign, ambiguous, adversarial, harmful, or indeterminate, with
+        supporting evidence.
+      </div>
+    </div>
+
+    <div class="taxonomy-row">
+      <div class="taxonomy-label mono">
+        Expected Behavior
+      </div>
+
+      <div class="taxonomy-text">
+        What a strong model should recognize, preserve, clarify, generate,
+        or refuse.
+      </div>
+    </div>
+
+    <div class="taxonomy-row">
+      <div class="taxonomy-label mono">
+        Observed Behavior
+      </div>
+
+      <div class="taxonomy-text">
+        What the model actually said, generated, omitted, or transformed.
+      </div>
+    </div>
+
+    <div class="taxonomy-row">
+      <div class="taxonomy-label mono">
+        Failure Mechanism
+      </div>
+
+      <div class="taxonomy-text">
+        The smallest useful set of labels explaining the observed gap.
+      </div>
+    </div>
+
+    <div class="taxonomy-row">
+      <div class="taxonomy-label mono">
+        Evaluator Confidence
+      </div>
+
+      <div class="taxonomy-text">
+        Low, moderate, or high, with unresolved ambiguity documented.
+      </div>
+    </div>
+  </div>
+
+  <h2>Final assessment</h2>
+
+  <p>
+    Strong multimodal evaluation requires evaluators to separate what the
+    model saw, what it understood, what it inferred, and what it ultimately
+    did.
+  </p>
+
+  <p>
+    A model may succeed at recognition while failing at integration. It may
+    succeed at integration while failing at intent. It may understand both
+    and still make a poor safety decision.
+  </p>
+
+  <p>
+    Collapsing those layers into a single pass-or-fail label makes the
+    evaluation easier to count and harder to learn from.
+  </p>
+
+  <div class="thesis">
+    <p>
+      The goal is not merely to determine whether the output is wrong. The
+      goal is to identify where multimodal understanding broke.
+    </p>
+  </div>
+
+  <aside class="methodology-note mono">
+    <strong>Framework note:</strong> This framework is independently
+    authored from public-facing analysis and professional multimodal
+    evaluation experience. It does not reproduce proprietary datasets,
+    confidential taxonomies, restricted prompts, or internal evaluation
+    materials.
+  </aside>
+</article>
+
+<footer class="article-footer mono">
+  <p>
+    This framework is part of an evolving public system for documenting
+    multimodal evaluation methods, model failures, and trust and safety
+    analysis.
+  </p>
+</footer>
+```
+
+  </main>
+</body>
+</html>
