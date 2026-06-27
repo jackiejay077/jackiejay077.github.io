@@ -120,11 +120,21 @@
       background: var(--panel);
     }
 
-    .nav a:first-child {
-      color: var(--teal);
-      border-color: var(--border);
-      background: var(--panel);
-    }
+   .nav a.active {
+  color: var(--teal);
+  border-color: var(--border);
+  background: var(--panel);
+}
+
+.nav a.active::after {
+  content: "";
+  position: absolute;
+  top: 8px;
+  right: -13px;
+  bottom: 8px;
+  width: 2px;
+  background: var(--teal);
+}
 
     .system-status {
       margin-top: 34px;
