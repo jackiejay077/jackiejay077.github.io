@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="A practical taxonomy for classifying failures in generative AI model responses."
+  >
+
+  <title>
+    Model Response Failure Taxonomy | Jacqueline Jiang
+  </title>
+
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/content.css">
+</head>
+
+<body>
+  <header class="topbar mono">
+    <div class="topbar-left">
+      <span>&gt;_</span> jackiejay077.github.io
+    </div>
+
+    <div class="topbar-right">
+      Framework 001
+    </div>
+  </header>
+
+  <main class="page">
+    <a class="back-link mono" href="../index.html#frameworks">
+      ← Return to frameworks
+    </a>
+
+    <header class="case-header">
+      <p class="case-label mono">
+        Framework 001 · Failure Classification
+      </p>
+
+      <h1>Model Response Failure Taxonomy</h1>
+
+      <p class="dek">
+        A practical classification system for identifying how generative AI
+        responses fail across intent, context, grounding, safety judgment,
+        and conversational behavior.
+      </p>
+
+      <div class="metadata mono">
+        <span class="published">Status: Published</span>
+        <span>Version: 1.0</span>
+        <span>Author: Jacqueline Jiang</span>
+      </div>
+
+      <div class="summary-grid">
+        <div class="summary-card">
+          <p class="summary-label mono">Framework Type</p>
+
+          <p class="summary-value">
+            Qualitative failure taxonomy
+          </p>
+        </div>
+
+        <div class="summary-card">
+          <p class="summary-label mono">Primary Use</p>
+
+          <p class="summary-value">
+            Evaluation, annotation, and root-cause analysis
+          </p>
+        </div>
+
+        <div class="summary-card">
+          <p class="summary-label mono">Unit of Analysis</p>
+
+          <p class="summary-value">
+            Individual responses and multi-turn interactions
+          </p>
+        </div>
+      </div>
+    </header>
+
+    <article>
+      <h2>Purpose</h2>
+
+      <p>
+        Binary labels such as pass, fail, comply, and refuse are useful for
+        reporting, but they often conceal the mechanism behind a model failure.
+        Two responses may both receive a failing score while failing for
+        entirely different reasons.
+      </p>
+
+      <p>
+        This taxonomy separates observable response outcomes from the
+        underlying behavioral pattern. It is intended to support structured
+        evaluation, annotation consistency, root-cause analysis, and clearer
+        communication between evaluators, policy teams, and technical
+        stakeholders.
+      </p>
+
+      <div class="thesis">
+        <p>
+          A useful failure label should explain not only that the response was
+          wrong, but how the model arrived at the wrong behavior.
+        </p>
+      </div>
+
+      <h2>Core classification dimensions</h2>
+
+      <div class="taxonomy">
+        <div class="taxonomy-row">
+          <div class="taxonomy-label mono">Intent</div>
+
+          <div class="taxonomy-text">
+            Did the model correctly understand what the user was attempting to
+            accomplish?
+          </div>
+        </div>
+
+        <div class="taxonomy-row">
+          <div class="taxonomy-label mono">Context</div>
+
+          <div class="taxonomy-text">
+            Did the model use the full conversation, available modalities, and
+            prior evidence?
+          </div>
+        </div>
+
+        <div class="taxonomy-row">
+          <div class="taxonomy-label mono">Grounding</div>
+
+          <div class="taxonomy-text">
+            Was the response supported by the actual input, or did the model
+            invent assumptions and evidence?
+          </div>
+        </div>
+
+        <div class="taxonomy-row">
+          <div class="taxonomy-label mono">Safety Judgment</div>
+
+          <div class="taxonomy-text">
+            Was the response proportionate to the type and severity of risk?
+          </div>
+        </div>
+
+        <div class="taxonomy-row">
+          <div class="taxonomy-label mono">Relevance</div>
+
+          <div class="taxonomy-text">
+            Did the model address the actual request rather than a safer or
+            easier neighboring question?
+          </div>
+        </div>
+
+        <div class="taxonomy-row">
+          <div class="taxonomy-label mono">Longitudinal Behavior</div>
+
+          <div class="taxonomy-text">
+            Did the model preserve relevant conclusions and risk hypotheses
+            across multiple turns?
+          </div>
+        </div>
+      </div>
+
+      <h2>Failure categories</h2>
+
+      <div class="finding-grid">
+        <section class="finding">
+          <p class="finding-index mono">Failure 01</p>
+
+          <h3>Unsafe Compliance</h3>
+
+          <p>
+            The model fulfills a request in a way that materially enables,
+            escalates, or normalizes harmful behavior.
+          </p>
+        </section>
+
+        <section class="finding">
+          <p class="finding-index mono">Failure 02</p>
+
+          <h3>Over-Refusal</h3>
+
+          <p>
+            The model refuses a benign or supportable request because it
+            overweights surface-level risk indicators.
+          </p>
+        </section>
+
+        <section class="finding">
+          <p class="finding-index mono">Failure 03</p>
+
+          <h3>Intent Misclassification</h3>
+
+          <p>
+            The model assigns the wrong objective to the user, causing the
+            response to be unsafe, irrelevant, or disproportionate.
+          </p>
+        </section>
+
+        <section class="finding">
+          <p class="finding-index mono">Failure 04</p>
+
+          <h3>Grounding Failure</h3>
+
+          <p>
+            The response relies on invented facts, unsupported assumptions, or
+            incorrect interpretation of the available evidence.
+          </p>
+        </section>
+
+        <section class="finding">
+          <p class="finding-index mono">Failure 05</p>
+
+          <h3>Adjacent-Question Pivot</h3>
+
+          <p>
+            The model avoids the actual request by answering a safer, easier,
+            or more convenient neighboring question.
+          </p>
+        </section>
+
+        <section class="finding">
+          <p class="finding-index mono">Failure 06</p>
+
+          <h3>Policy-Shaped Evasion</h3>
+
+          <p>
+            The response adopts the language or appearance of safety while
+            failing to demonstrate meaningful understanding or useful
+            intervention.
+          </p>
+        </section>
+
+        <section class="finding">
+          <p class="finding-index mono">Failure 07</p>
+
+          <h3>Context Abandonment</h3>
+
+          <p>
+            The model previously demonstrates awareness of relevant context,
+            then later reverts to interpreting the newest message in isolation.
+          </p>
+        </section>
+
+        <section class="finding">
+          <p class="finding-index mono">Failure 08</p>
+
+          <h3>Reassurance Override</h3>
+
+          <p>
+            The model prematurely downgrades risk after a user denial despite
+            unresolved or contradictory contextual evidence.
+          </p>
+        </section>
+
+        <section class="finding">
+          <p class="finding-index mono">Failure 09</p>
+
+          <h3>Premature De-escalation</h3>
+
+          <p>
+            The model returns to ordinary conversation before the risk state
+            has been meaningfully resolved.
+          </p>
+        </section>
+
+        <section class="finding">
+          <p class="finding-index mono">Failure 10</p>
+
+          <h3>Local Coherence, Global Failure</h3>
+
+          <p>
+            An individual response appears reasonable when viewed alone but
+            becomes inappropriate when evaluated against the full interaction.
+          </p>
+        </section>
+
+        <section class="finding">
+          <p class="finding-index mono">Failure 11</p>
+
+          <h3>Confident Nonsense</h3>
+
+          <p>
+            The model expresses high confidence despite weak grounding,
+            incomplete task understanding, or fabricated reasoning.
+          </p>
+        </section>
+
+        <section class="finding">
+          <p class="finding-index mono">Failure 12</p>
+
+          <h3>Multimodal Fragmentation</h3>
+
+          <p>
+            The model processes text and visual inputs separately and fails to
+            recognize the meaning that emerges from their combination.
+          </p>
+        </section>
+      </div>
+
+      <h2>Using the taxonomy</h2>
+
+      <p>
+        A response may receive more than one failure label. The purpose is not
+        to force every interaction into a single category, but to identify the
+        smallest useful set of mechanisms explaining the observed behavior.
+      </p>
+
+      <p>
+        Evaluators should distinguish between:
+      </p>
+
+      <ul>
+        <li>the observable outcome;</li>
+        <li>the behavioral mechanism;</li>
+        <li>the risk or quality impact;</li>
+        <li>the evidence supporting the classification.</li>
+      </ul>
+
+      <div class="taxonomy">
+        <div class="taxonomy-row">
+          <div class="taxonomy-label mono">Outcome</div>
+
+          <div class="taxonomy-text">
+            What did the model ultimately do: comply, refuse, redirect, ask for
+            clarification, or provide partial assistance?
+          </div>
+        </div>
+
+        <div class="taxonomy-row">
+          <div class="taxonomy-label mono">Mechanism</div>
+
+          <div class="taxonomy-text">
+            Which failure pattern best explains the behavior?
+          </div>
+        </div>
+
+        <div class="taxonomy-row">
+          <div class="taxonomy-label mono">Impact</div>
+
+          <div class="taxonomy-text">
+            Did the response increase risk, reduce usefulness, introduce false
+            information, or conceal a safety failure?
+          </div>
+        </div>
+
+        <div class="taxonomy-row">
+          <div class="taxonomy-label mono">Evidence</div>
+
+          <div class="taxonomy-text">
+            Which specific parts of the input and response support the assigned
+            label?
+          </div>
+        </div>
+      </div>
+
+      <h2>Example classification</h2>
+
+      <p>
+        In the case study
+        <a href="../case-files/reassurance-overrides-evidence.html">
+          When Reassurance Overrides the Evidence
+        </a>,
+        the model correctly identified acute risk and asked about immediate
+        safety. After the user denied intent, the model resumed ordinary
+        guidance despite additional unresolved warning signals.
+      </p>
+
+      <p>
+        That sequence can be classified as:
+      </p>
+
+      <ul>
+        <li>reassurance override;</li>
+        <li>context abandonment;</li>
+        <li>premature de-escalation;</li>
+        <li>local coherence, global failure.</li>
+      </ul>
+
+      <div class="risk-callout">
+        <p>
+          The labels are most useful when they explain distinct parts of the
+          failure rather than repeating the same judgment in different words.
+        </p>
+      </div>
+
+      <h2>Limitations</h2>
+
+      <p>
+        This taxonomy is qualitative and intentionally designed for practical
+        evaluation work. It does not replace domain-specific policy labels,
+        severity ratings, or quantitative benchmark metrics.
+      </p>
+
+      <p>
+        Categories may overlap, and some failures may require additional
+        domain-specific labels. The taxonomy should evolve as new model
+        capabilities, modalities, and behavioral patterns emerge.
+      </p>
+
+      <div class="thesis">
+        <p>
+          Classification is not the final objective. The objective is clearer
+          diagnosis, more consistent evaluation, and better understanding of
+          why model behavior failed.
+        </p>
+      </div>
+
+      <aside class="methodology-note mono">
+        <strong>Framework note:</strong> This taxonomy is independently
+        authored from public-facing analysis and professional experience. It
+        does not reproduce proprietary policy language, confidential
+        taxonomies, or restricted evaluation materials.
+      </aside>
+    </article>
+
+    <footer class="article-footer mono">
+      <p>
+        This framework is part of an evolving public system for documenting
+        adversarial evaluation methods, model failures, and trust and safety
+        analysis.
+      </p>
+    </footer>
+  </main>
+</body>
+</html>
