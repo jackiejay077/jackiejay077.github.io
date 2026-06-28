@@ -1,0 +1,88 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 64 64"
+>
+  <rect
+    width="64"
+    height="64"
+    rx="11"
+    fill="#0a0f12"
+  />
+
+  <!-- First J -->
+  <path
+    d="M9 17
+       C14 11, 22 9, 28 8
+       C23 13, 21 18, 20 25
+       L18 39
+       C17 48, 13 53, 8 52
+       C4 51, 5 46, 10 43"
+    fill="none"
+    stroke="#25b7a4"
+    stroke-width="5.2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+
+  <!-- Second J -->
+  <path
+    d="M31 21
+       C37 15, 46 12, 54 11
+       C49 16, 47 21, 46 28
+       L44 42
+       C43 51, 39 56, 34 55
+       C30 54, 31 49, 36 46"
+    fill="none"
+    stroke="#25b7a4"
+    stroke-width="5.2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+
+  <!-- Blade terminals -->
+  <path
+    d="M25 8 L30 7 L26 13 Z"
+    fill="#25b7a4"
+  />
+
+  <path
+    d="M51 11 L57 9 L52 16 Z"
+    fill="#25b7a4"
+  />
+
+  <path
+    d="M7 51 L13 47 L10 55 Z"
+    fill="#25b7a4"
+  />
+
+  <path
+    d="M33 54 L40 49 L36 58 Z"
+    fill="#25b7a4"
+  />
+
+  <!-- Fracture cuts -->
+  <path
+    d="M13 32 L25 25 L23 30 L12 37 Z"
+    fill="#0a0f12"
+  />
+
+  <path
+    d="M38 36 L50 29 L48 34 L37 41 Z"
+    fill="#0a0f12"
+  />
+
+  <!-- Fine blade accents -->
+  <path
+    d="M11 41 L23 33"
+    stroke="#25b7a4"
+    stroke-width="1.4"
+    stroke-linecap="round"
+  />
+
+  <path
+    d="M36 44 L49 35"
+    stroke="#25b7a4"
+    stroke-width="1.4"
+    stroke-linecap="round"
+  />
+</svg>
