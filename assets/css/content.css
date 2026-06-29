@@ -297,3 +297,10 @@
     grid-template-columns: 1fr;
   }
 }
+.article-back-link:focus-visible,
+.related-work-card:focus-visible,
+.article-footer a:focus-visible {
+  outline: 2px solid var(--teal);
+  outline-offset: 4px;
+  border-color: var(--teal);
+}
