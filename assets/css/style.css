@@ -575,3 +575,22 @@
       }
     }
   
+/* Accessible keyboard focus states */
+a:focus-visible,
+button:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--teal);
+  outline-offset: 4px;
+}
+
+.nav a:focus-visible,
+.list-row:focus-visible,
+.card:focus-visible,
+.sidebar-links a:focus-visible {
+  border-color: var(--teal);
+}
+
+a,
+button {
+  -webkit-tap-highlight-color: transparent;
+}
