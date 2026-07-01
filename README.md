@@ -27,6 +27,27 @@ The project is structured around three types of material:
 
 ## Published Work
 
+### Case Files
+
+- [When Reassurance Overrides the Evidence](https://jackiejay077.github.io/case-files/reassurance-overrides-evidence.html)  
+  A longitudinal safety case study examining reassurance override, context abandonment, and premature de-escalation.
+
+### Field Notes
+
+- [A Refusal Is Not Automatically a Safe Response](https://jackiejay077.github.io/field-notes/refusal-is-not-safety.html)  
+  An analysis of why refusal is an output category, while safety depends on reasoning quality, context, and proportional judgment.
+
+### Evaluation Frameworks
+
+- [Intent Classification Rubric](https://jackiejay077.github.io/frameworks/intent-classification-rubric.html)  
+  An evidence-based method for classifying benign, ambiguous, adversarial, harmful, and indeterminate user intent.
+
+- [Model Response Failure Taxonomy](https://jackiejay077.github.io/frameworks/model-response-failure-taxonomy.html)  
+  A reusable taxonomy for diagnosing failures across intent, context, grounding, refusal, and safety judgment.
+
+- [Multimodal Evaluation Framework](https://jackiejay077.github.io/frameworks/multimodal-evaluation-framework.html)  
+  A structured approach to evaluating image understanding, cross-modal reasoning, grounding, intent, and safety.
+
 ### Case File 001
 
 **When Reassurance Overrides the Evidence**
@@ -43,6 +64,15 @@ An examination of why refusal behavior alone is an incomplete measure of model s
 
 [Read the field note](https://jackiejay077.github.io/field-notes/refusal-is-not-safety.html)
 
+## Site Features
+
+- Responsive layout across desktop and mobile viewports
+- Visible keyboard focus states and keyboard-accessible navigation
+- Related-work links connecting case studies, field notes, and frameworks
+- Custom blade-script `JJ` favicon
+- Branded social preview metadata
+- Custom 404 page
+- Versioned public documents with clear publication status
 ## Repository Structure
 
 ```text
