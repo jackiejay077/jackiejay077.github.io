@@ -347,8 +347,7 @@
   .related-work-grid {
     grid-template-columns: 1fr;
   }
-}
-       @media (max-width: 640px) {
+
   .framework-row,
   .summary-row {
     grid-template-columns: 1fr;
