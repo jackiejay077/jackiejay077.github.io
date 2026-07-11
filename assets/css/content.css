@@ -284,7 +284,43 @@
   font-size: 0.88rem;
   line-height: 1.6;
 }
+.table-wrapper {
+  width: 100%;
+  margin: 28px 0;
+  overflow-x: auto;
+  border: 1px solid var(--border);
+}
 
+.table-wrapper table {
+  width: 100%;
+  min-width: 720px;
+  border-collapse: collapse;
+}
+
+.table-wrapper th,
+.table-wrapper td {
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+  vertical-align: top;
+}
+
+.table-wrapper th {
+  color: var(--text-primary);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.table-wrapper td {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.table-wrapper tr:last-child td {
+  border-bottom: none;
+}
 @media (max-width: 640px) {
   .related-work-grid {
     grid-template-columns: 1fr;
