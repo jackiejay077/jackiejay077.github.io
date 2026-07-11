@@ -189,14 +189,14 @@
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 8px;
-  margin-top: 18px;
+  margin-top: 16px;
 }
 
 .sidebar-links a {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 36px;
+  min-height: 40px;
   padding: 8px 10px;
   border: 1px solid var(--border);
   color: var(--text-secondary);
@@ -545,8 +545,10 @@
 
       .system-status,
       .sidebar-footer {
-        display: none;
-      }
+          display: block;
+  margin-top: 24px;
+  padding-top: 20px;
+}
 
       .nav {
         display: flex;
