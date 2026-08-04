@@ -137,7 +137,41 @@
           only inference from partial context.
         </p>
       </section>
+<section>
+  <h2>Observed scenario</h2>
 
+  <p>
+    The observed failure was not simply an incorrect answer. The more
+    significant issue was that the model produced a response that appeared
+    to rely on remembered context, when the answer was more likely generated
+    from pattern completion, partial cues, or plausible inference.
+  </p>
+
+  <p>
+    In the interaction, the model responded as though it retained or had
+    access to prior user-specific information. The answer had the surface
+    shape of continuity: it sounded familiar, context-aware, and confident
+    enough to imply retrieval. However, when challenged, the response did
+    not show evidence that the information had actually been remembered or
+    verified.
+  </p>
+
+  <p>
+    This made the failure more severe than an ordinary mistake. A wrong
+    answer can be corrected directly. False recall is harder to evaluate
+    because the model’s presentation suggests a stronger basis than the
+    response actually has. The user is forced to ask whether the system is
+    remembering, retrieving, inferring, or fabricating.
+  </p>
+
+  <p>
+    The trust failure comes from that ambiguity. The model does not need
+    to explicitly say “I remember” for the effect to occur. If the response
+    performs continuity without grounding, it can create the same user
+    impact: confidence is inflated, uncertainty is hidden, and the boundary
+    between memory and prediction becomes unclear.
+  </p>
+</section>
       <section>
         <h2>Why it matters</h2>
 
