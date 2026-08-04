@@ -27,6 +27,11 @@ The project is structured around three types of material:
 
 ## Published Work
 
+### Observed Failure Nodes
+
+- [Pattern Completion as False Recall](https://jackiejay077.github.io/failure-nodes/pattern-completion-as-false-recall.html)  
+  A qualitative failure observation examining how models can present inferred continuity as remembered context.
+
 ### Case Files
 
 - [When Reassurance Overrides the Evidence](https://jackiejay077.github.io/case-files/reassurance-overrides-evidence.html)  
