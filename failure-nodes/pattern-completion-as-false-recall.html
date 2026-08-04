@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Pattern Completion as False Recall — Jacqueline Jiang</title>
+
+  <meta
+    name="description"
+    content="A qualitative failure node examining how models can present inferred continuity as remembered context."
+  >
+
+  <link
+    rel="canonical"
+    href="https://jackiejay077.github.io/failure-nodes/pattern-completion-as-false-recall.html"
+  >
+
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Jacqueline Jiang — AI Safety Evaluation">
+
+  <meta
+    property="og:title"
+    content="Pattern Completion as False Recall"
+  >
+
+  <meta
+    property="og:description"
+    content="A qualitative failure node examining how models can present inferred continuity as remembered context."
+  >
+
+  <meta
+    property="og:url"
+    content="https://jackiejay077.github.io/failure-nodes/pattern-completion-as-false-recall.html"
+  >
+
+  <meta name="twitter:card" content="summary_large_image">
+
+  <meta
+    name="twitter:title"
+    content="Pattern Completion as False Recall"
+  >
+
+  <meta
+    name="twitter:description"
+    content="When plausible continuation is presented as remembered context."
+  >
+
+  <link
+    rel="stylesheet"
+    href="../assets/css/style.css?v=mobile-links"
+  >
+
+  <link
+    rel="stylesheet"
+    href="../assets/css/content.css?v=article-style-fix"
+  >
+
+  <link
+    rel="icon"
+    type="image/svg+xml"
+    href="../assets/icons/favicon.svg?v=2"
+  >
+</head>
+
+<body>
+  <main class="article-page">
+    <article>
+      <a
+        class="article-back-link mono"
+        href="../index.html"
+      >
+        Return to overview
+      </a>
+
+      <header class="article-header">
+        <p class="article-kicker mono">
+          Failure Node 001
+        </p>
+
+        <h1>Pattern Completion as False Recall</h1>
+
+        <p class="article-dek">
+          A model can produce an answer that resembles remembered
+          context without actually retrieving or verifying the underlying
+          information.
+        </p>
+      </header>
+
+      <div class="summary">
+        <div class="summary-row">
+          <p class="summary-label mono">Failure Type</p>
+
+          <p class="summary-text">
+            Retrieval / memory presentation failure
+          </p>
+        </div>
+
+        <div class="summary-row">
+          <p class="summary-label mono">Observed In</p>
+
+          <p class="summary-text">
+            Ordinary interaction, continuity-sensitive conversation,
+            and user-specific context recall.
+          </p>
+        </div>
+
+        <div class="summary-row">
+          <p class="summary-label mono">Core Risk</p>
+
+          <p class="summary-text">
+            The model presents inference as continuity, making the user
+            believe prior information was remembered, verified, or
+            retrieved when it was not.
+          </p>
+        </div>
+      </div>
+
+      <section>
+        <h2>Failure pattern</h2>
+
+        <p>
+          Pattern completion as false recall occurs when a model fills a
+          contextual gap with a plausible continuation and presents that
+          continuation as if it came from remembered or retrieved
+          information.
+        </p>
+
+        <p>
+          The failure is not simply that the model gets something wrong.
+          The more important failure is presentation: the response can
+          sound like continuity, memory, or verification even when it is
+          only inference from partial context.
+        </p>
+      </section>
+
+      <section>
+        <h2>Why it matters</h2>
+
+        <p>
+          In continuity-sensitive interactions, users often rely on the
+          model to distinguish between what it knows, what it can verify,
+          what it remembers, and what it is merely inferring. When those
+          categories collapse, the user loses the ability to tell whether
+          the response is grounded.
+        </p>
+
+        <p>
+          This can damage trust faster than an ordinary wrong answer
+          because the model is not only inaccurate. It appears to be
+          claiming access to context it may not actually have.
+        </p>
+      </section>
+
+      <section>
+        <h2>Failure signature</h2>
+
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Signal</th>
+                <th>Behavior</th>
+                <th>Evaluation Concern</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>Continuity language</td>
+                <td>
+                  The model speaks as if it remembers prior details.
+                </td>
+                <td>
+                  May imply retrieval or memory where only inference is
+                  occurring.
+                </td>
+              </tr>
+
+              <tr>
+                <td>Plausible specificity</td>
+                <td>
+                  The answer contains details that fit the user or topic
+                  but are not actually verified.
+                </td>
+                <td>
+                  Plausibility can mask lack of grounding.
+                </td>
+              </tr>
+
+              <tr>
+                <td>Confidence without citation</td>
+                <td>
+                  The model gives a direct answer without disclosing
+                  uncertainty or source limits.
+                </td>
+                <td>
+                  The user cannot separate evidence from prediction.
+                </td>
+              </tr>
+
+              <tr>
+                <td>Delayed correction</td>
+                <td>
+                  The model only admits uncertainty after being challenged.
+                </td>
+                <td>
+                  The initial response miscalibrates trust.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section>
+        <h2>Distinction from ordinary hallucination</h2>
+
+        <p>
+          A hallucination is often framed as fabricated content. This
+          failure node is narrower: the issue is the model’s implied
+          relationship to prior context.
+        </p>
+
+        <p>
+          The model may generate a plausible answer that appears socially
+          or conversationally coherent. But if it presents that answer as
+          remembered, retrieved, or verified without having actually
+          grounded it, the failure becomes false recall rather than only
+          false content.
+        </p>
+      </section>
+
+      <section>
+        <h2>Evaluator note</h2>
+
+        <p>
+          This node is useful when reviewing model behavior in long-running
+          conversations, personalized interactions, support settings, or
+          any task where continuity affects user trust. The key question
+          is not only whether the answer is correct. The question is
+          whether the model accurately represented how it knew.
+        </p>
+      </section>
+
+      <section class="related-work">
+        <h2 class="related-work-heading">Related Work</h2>
+
+        <div class="related-work-grid">
+          <a
+            class="related-work-card"
+            href="../frameworks/model-response-failure-taxonomy.html"
+          >
+            <p class="related-work-type mono">Framework</p>
+
+            <h3 class="related-work-title">
+              Model Response Failure Taxonomy
+            </h3>
+
+            <p class="related-work-description">
+              Classification language for diagnosing grounding,
+              context, and response-quality failures.
+            </p>
+          </a>
+
+          <a
+            class="related-work-card"
+            href="../field-notes/refusal-is-not-safety.html"
+          >
+            <p class="related-work-type mono">Field Note</p>
+
+            <h3 class="related-work-title">
+              A Refusal Is Not Automatically a Safe Response
+            </h3>
+
+            <p class="related-work-description">
+              A companion argument about why visible model behavior
+              should not be confused with underlying reasoning quality.
+            </p>
+          </a>
+        </div>
+      </section>
+
+      <footer class="article-footer mono">
+        <a href="../index.html">
+          Return to overview
+        </a>
+      </footer>
+    </article>
+  </main>
+</body>
+</html>
