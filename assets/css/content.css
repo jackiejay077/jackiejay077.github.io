@@ -96,7 +96,28 @@
     .back-link:hover {
       color: var(--teal);
     }
+.article-page {
+  width: min(100% - 48px, 980px);
+  margin: 0 auto;
+  padding: 64px 0;
+}
 
+.article-page article {
+  width: 100%;
+}
+
+.article-header {
+  padding-bottom: 48px;
+  border-bottom: 1px solid var(--border);
+}
+
+.article-header h1 {
+  max-width: 860px;
+}
+
+.article-dek {
+  max-width: 860px;
+}
     .article-header {
       padding-bottom: 44px;
       border-bottom: 1px solid var(--border);
