@@ -27,11 +27,6 @@ The project is structured around three types of material:
 
 ## Published Work
 
-### Observed Failure Nodes
-
-- [Pattern Completion as False Recall](https://jackiejay077.github.io/failure-nodes/pattern-completion-as-false-recall.html)  
-  A qualitative failure observation examining how models can present inferred continuity as remembered context.
-
 ### Case Files
 
 - [When Reassurance Overrides the Evidence](https://jackiejay077.github.io/case-files/reassurance-overrides-evidence.html)  
@@ -42,6 +37,11 @@ The project is structured around three types of material:
 - [A Refusal Is Not Automatically a Safe Response](https://jackiejay077.github.io/field-notes/refusal-is-not-safety.html)  
   An analysis of why refusal is an output category, while safety depends on reasoning quality, context, and proportional judgment.
 
+### Observed Failure Nodes
+
+- [Pattern Completion as False Recall](https://jackiejay077.github.io/failure-nodes/pattern-completion-as-false-recall.html)  
+  A qualitative failure observation examining how models can present inferred continuity as remembered context.
+  
 ### Evaluation Frameworks
 
 - [Intent Classification Rubric](https://jackiejay077.github.io/frameworks/intent-classification-rubric.html)  
