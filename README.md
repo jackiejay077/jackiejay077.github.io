@@ -1,142 +1,96 @@
-# Jacqueline Jiang — AI Safety Portfolio
+# Jacqueline Jiang — AI Safety & Red Teaming
 
-A public portfolio focused on adversarial AI evaluation, multimodal model behavior, and trust and safety systems.
+Public portfolio for adversarial AI evaluation, multimodal safety, model-behavior analysis, and evaluation quality systems.
 
-**Live site:**
-https://jackiejay077.github.io/
+**Live site:** [jackiejay077.github.io](https://jackiejay077.github.io/)
 
-## Overview
+## Recruiter snapshot
 
-This repository contains the source files for my professional portfolio and public body of work in AI safety.
+I work at the seam between red teaming and operations: design the evaluation, inspect the judgment, isolate the failure mechanism, and build the review layer that keeps recurring errors from becoming normal.
 
-The project is structured around three types of material:
+Selected operating evidence:
 
-* **Case Files** — evidence-based analyses of model failures, risk trajectories, and evaluation outcomes
-* **Evaluation Frameworks** — reusable rubrics, taxonomies, and methods for assessing model behavior
-* **Field Notes** — shorter observations on safety judgment, refusal behavior, ambiguity, and multimodal risk
+| Signal | Scope |
+| --- | --- |
+| Final-stage quality ownership | AI evaluation and red-team delivery workflows |
+| 250+ QA audits per week | Monetization-integrity appeals and policy enforcement |
+| 30% team error reduction | Structured audit findings and root-cause remediation |
+| 800+ reviews per week | High-volume integrity and abuse queues |
+| 40+ analysts trained | Onboarding, workflow documentation, and calibration |
+| Multimodal red teaming | Text-to-image, image editing, and multi-reference evaluation |
 
-## Current Focus
+## Published work
 
-* adversarial evaluation
-* multimodal safety testing
-* model behavior analysis
-* trust and safety systems
-* failure-mode classification
-* evaluator calibration
-* qualitative root-cause analysis
+### Case files
 
-## Published Work
-
-### Case Files
-
-- [When Reassurance Overrides the Evidence](https://jackiejay077.github.io/case-files/reassurance-overrides-evidence.html)  
+- [When Reassurance Overrides the Evidence](https://jackiejay077.github.io/case-files/reassurance-overrides-evidence.html)
   A longitudinal safety case study examining reassurance override, context abandonment, and premature de-escalation.
 
-### Field Notes
+### Evaluation frameworks
 
-- [A Refusal Is Not Automatically a Safe Response](https://jackiejay077.github.io/field-notes/refusal-is-not-safety.html)  
-  An analysis of why refusal is an output category, while safety depends on reasoning quality, context, and proportional judgment.
-
-### Observed Failure Nodes
-
-- [Pattern Completion as False Recall](https://jackiejay077.github.io/failure-nodes/pattern-completion-as-false-recall.html)  
-  A qualitative failure observation examining how models can present inferred continuity as remembered context.
-  
-### Evaluation Frameworks
-
-- [Intent Classification Rubric](https://jackiejay077.github.io/frameworks/intent-classification-rubric.html)  
+- [Intent Classification Rubric](https://jackiejay077.github.io/frameworks/intent-classification-rubric.html)
   An evidence-based method for classifying benign, ambiguous, adversarial, harmful, and indeterminate user intent.
 
-- [Model Response Failure Taxonomy](https://jackiejay077.github.io/frameworks/model-response-failure-taxonomy.html)  
+- [Model Response Failure Taxonomy](https://jackiejay077.github.io/frameworks/model-response-failure-taxonomy.html)
   A reusable taxonomy for diagnosing failures across intent, context, grounding, refusal, and safety judgment.
 
-- [Multimodal Evaluation Framework](https://jackiejay077.github.io/frameworks/multimodal-evaluation-framework.html)  
-  A structured approach to evaluating image understanding, cross-modal reasoning, grounding, intent, and safety.
+- [Multimodal Evaluation Framework](https://jackiejay077.github.io/frameworks/multimodal-evaluation-framework.html)
+  A structured method for locating failures across recognition, cross-modal integration, intent, grounding, and safety.
 
-### Case File 001
+### Field notes
 
-**When Reassurance Overrides the Evidence**
+- [A Refusal Is Not Automatically a Safe Response](https://jackiejay077.github.io/field-notes/refusal-is-not-safety.html)
+  Why refusal is an output category while safety depends on reasoning quality, context, and proportional judgment.
 
-A longitudinal analysis of cumulative self-harm risk, context abandonment, and premature de-escalation after user reassurance.
+### Failure nodes
 
-[Read the case file](https://jackiejay077.github.io/case-files/reassurance-overrides-evidence.html)
+- [Pattern Completion as False Recall](https://jackiejay077.github.io/failure-nodes/pattern-completion-as-false-recall.html)
+  How inferred continuity can be presented as remembered context without verified retrieval.
 
-### Field Note 001
+## Evaluation approach
 
-**A Refusal Is Not Automatically a Safe Response**
+The work in this repository emphasizes:
 
-An examination of why refusal behavior alone is an incomplete measure of model safety.
+- conversation-level rather than prompt-level evaluation;
+- evidence-based intent classification without collapsing ambiguity;
+- separation of observable outcome, behavioral mechanism, and impact;
+- combined interpretation of text, image, and multi-reference inputs;
+- proportional safety judgment rather than refusal-counting;
+- evaluator calibration, reproducibility, and root-cause remediation.
 
-[Read the field note](https://jackiejay077.github.io/field-notes/refusal-is-not-safety.html)
-
-## Site Features
-
-- Responsive layout across desktop and mobile viewports
-- Visible keyboard focus states and keyboard-accessible navigation
-- Related-work links connecting case studies, field notes, and frameworks
-- Custom blade-script `JJ` favicon
-- Branded social preview metadata
-- Custom 404 page
-- Versioned public documents with clear publication status
-## Repository Structure
+## Information architecture
 
 ```text
 jackiejay077.github.io/
 ├── assets/
-│   └── css/
-│       └── style.css
+│   ├── css/
+│   ├── icons/
+│   ├── js/
+│   ├── resume/
+│   └── social/
 ├── case-files/
-│   └── reassurance-overrides-evidence.html
+├── failure-nodes/
 ├── field-notes/
-│   └── refusal-is-not-safety.html
+├── frameworks/
+├── 404.html
 ├── index.html
-└── README.md
+├── robots.txt
+└── sitemap.xml
 ```
 
-## Methodology
-
-The work in this repository emphasizes:
-
-* conversation-level rather than prompt-level evaluation
-* cumulative interpretation of risk signals
-* distinction between surface compliance and actual reasoning quality
-* contextual analysis across text and image inputs
-* reproducibility and transparent failure classification
-* synthetic or sanitized examples that preserve analytic value without exposing confidential material
-
-## Design Principles
-
-The site is intentionally designed to feel like a working evaluation environment rather than a traditional portfolio template.
-
-The visual system uses:
-
-* dark operational interfaces
-* restrained teal accents
-* status-based color semantics
-* case-oriented information architecture
-* minimal decorative elements
-* evidence-first presentation
-
-## Development Status
-
-This portfolio is under active development.
-
-Current priorities:
-
-* expanding the evaluation framework section
-* publishing additional case files and field notes
-* consolidating shared styles across all pages
-* improving navigation and accessibility
-* adding professional links and downloadable materials
+The site is intentionally designed as a working evaluation environment rather than a generic portfolio template: dark operational UI, restrained teal status language, evidence-first document structure, and visible publication state.
 
 ## Confidentiality
 
 All public examples are independently authored, synthetic, sanitized, paraphrased, or adapted from non-confidential work.
 
-No proprietary datasets, internal policies, confidential prompts, or restricted evaluation materials are reproduced in this repository.
+No proprietary datasets, internal policies, confidential prompts, restricted evaluation materials, or employer-owned taxonomies are reproduced here.
 
-## Author
+## Contact
 
-**Jacqueline Jiang**
-AI Safety Analyst
-Adversarial Evaluation · Multimodal Safety · Trust & Safety
+**Jacqueline Jiang**<br>
+AI Safety Analyst · Adversarial Evaluation · Multimodal Safety · Quality Operations
+
+- [LinkedIn](https://www.linkedin.com/in/jacquelinejiang011/)
+- [GitHub](https://github.com/jackiejay077)
+- [Email](mailto:jacquelinejiang011@gmail.com)
